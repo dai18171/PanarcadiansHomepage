@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panarcadians</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <!-- Header part -->
+    <header>
+        <div class = "container">
+            <!-- Bar with weather time etc. -->
+            <div id = "topbar">
+                <div id = "time">
+                    <h3>ΑΡΚΑΔΙΑ</h3>
+                    <h2><span id = "clock"><img src="./svgs/clock.svg" alt="Clock"></span>13:28</h2>
+                </div>
+                <div id = "weather">
+                    <h3>ΚΑΤΑΙΓΙΔΑ</h3>
+                    <h2><span id = "clock"><img src="./svgs/storm.svg" alt="Strom"></span>12<span id="celsius">&#8451</span><span id="fahrenheit">&#8457</span></h2>
+                </div>
+                <div id="register">
+                    <a href="#"><span id = "user"><img src="./svgs/user.svg" alt="User"></span>Εγγραφή / Σύνδεση</a>
+                </div>
+                <div id = "language">
+                    <a href="#"><span id = "flag"><img src="./svgs/flag.svg" alt="Flag"></span><span id = "down"><img src="./svgs/down.svg" alt="Down"></span></a>
+                </div>
+            </div>
+
+            <nav id = "main">
+                <a href="/" id = "logo"><img src="./svgs/logo.svg" alt="Logo"></a>
+
+                <ul id="main-menu">
+                    <li><a href="#">Η ΟΜΟΣΠΟΝΔΙΑ</a>
+                        <!-- Dropdown list to be displayed when hovering items from main menu -->
+                        <ul class="dropdown">
+                            <li><a href="#">Ιστορία</a></li>
+                            <li><a href="#">Διοικητικό Συμβούλιο</a></li>
+                            <li><a href="#">Πρόεδρος - Βιογραφικό Σημείωμα</a></li>
+                            <li><a href="#">Μήνυμα Προέδρου</a></li>
+                            <li><a href="#">Districts</a></li>
+                            <li><a href="#">Διατελεσαντες Προέδροι</a></li>
+                            <li><a href="#">Αποστολή - Αξίες</a></li>
+                            <li><a href="#">Πορεία - Εξέλιξη</a></li>
+                            <li><a href="#">Ο Έλληνας πρέσβης στην Ουάσιγκτον</a></li>
+                            <li><a href="#">Ο Πρέσβης ΗΠΑ στην Αθήνα</a></li>
+                            <li><a href="#">Ο Οικουμενικός Πατριάρχης</a></li>
+                            <li><a href="#">Ο Αρχιεπίσκοπος Αμερικής</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ΑΡΚΑΔΩΝ ΕΡΓΑ</a></li> 
+                    <li><a href="#">ΕΠΩΝΥΜΟΙ ΑΡΚΑΔΕΣ</a></li> 
+                    <li><a href="#">ΝΕΑ - ΕΝΗΜΕΡΩΣΗ</a></li>
+                    <li><a href="#">ΕΠΙΣΚΕΨΗ ΣΤΗΝ ΑΡΚΑΔΙΑ</a></li>
+                    <li><a href="#">ΑΝΑΖΗΤΗΣΕΙΣ ΣΤΗΝ ΑΡΚΑΔΙΑ</a></li>
+                </ul>
+            </nav>
+
+            <div id = "paf">
+                <img src="./svgs/paf.svg" alt="paf"> 
+            </div>
+            <!-- Circled content in the middle of the page -->
+            <div id = "featured">
+                <img src="./svgs/symbol.svg" alt="Symbol">
+                    
+                <h3>ΚΑΛΩΣ ΗΛΘΑΤΕ</h3>
+                <h2>Η αποστολή μας</h2>
+                <p>
+                    Ο Παναρκαδικής Ομοσπονδίας Αμερικής είναι μια<br>
+                    πανεθνική μη κερδοσκοπικού αδελφό<br>
+                    ελληνικό-αμερικανική οργάνωση τα μέλη της οποίας<br>
+                    κατεβαίνουν από την περιοχή της Αρκαδίας στην<br>
+                    Πελοπόννησο, στη νότια Ελλάδα …
+                </p>
+                <!-- More button -->
+                <a href="#" class="morebutton">
+                    <h4>ΠΕΡΙΣΣΟΤΕΡΑ</h4><span><img src="./svgs/buttonarrow.svg" alt=""></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content inventory -->
+    <div id = "inventory">
+        <div class="container" id="inv">
+            <!-- Header with tree -->
+            <div id="tree">
+                <img src="./images/tree.png" alt="Tree">
+                <h2>Μετριόμαστε, γιατί μετράμε!</h2>
+            </div>
+            <!-- Two lists side by side -->
+            <div id="lists">
+                <div class = "list" id="list1">
+                    <h3>Γενική απογραφή  των αποδήμων Αρκάδων στις ΗΠΑ και
+                        επαναπατρισθέντων από τις ΗΠΑ</h3>
+                        <ul>
+                            <li><p>Η Παναρκαδική Ομοσπονδία Αμερικής πραγματοποιεί απογραφή
+                                 των Αρκάδων που διαμένουν και εργάζονται στις ΗΠΑ, (ανεξαρτήτως
+                                 υπηκότητας).</p></li>
+                            <li><p id="boltline">Το αποτύπωμα της Αρκαδικής γης μας συνδέει!</p></li>
+                            <li><p>Όση χιλιομετρική απόσταση και αν μας χωρίζει, όσες γενιές και να
+                                 έχουμε...ψηλώσει πέρα απο τις ρίζες μας, η Αρκαδία, μας ενώνει!
+                                </p>
+                            </li>
+                        </ul>
+                </div>
+                <div class = "list" id="list2">
+                    <h3>Απογραφόμαστε...</h3>
+                    <ul>
+                        <li>Για να γνωρίσουμε ο ένας τον άλλο.</li>
+                        <li>Για να αντλήσουμε δύναμη απο  τις ρίζες μας και την καταγωγή μας.</li>
+                        <li>Για να είμαστε χρήσιμοι και να  παρεμβαίνουμε δημιουργικά για τις ΗΠΑ την Ελλάδα και την Αρκαδία.</li>
+                        <li>Για να υλοποιήσουμε τα σχέδια και τα οραματά μας.</li>
+                        <li>Για να είμαστε ισχυροί.</li>
+                    </ul>
+                </div>
+            </div> 
+            <!-- Invitation to ceremony -->
+            <div id="ceremony">
+                <h2>ΤΕΛΕΤΗ ΕΝΑΡΞΗΣ</h2>
+                <h1>Παρασκευή 20 Απριλίου 2018</h1>
+                <h3>ΝΕΑ ΥΟΡΚΗ</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities part -->
+    <div id = "activities">
+        <div class = "container">
+            <div id = "act">
+                <!-- Header for activities -->
+                <div id = "head">
+                    <img src="./svgs/symbol.svg" alt="Symbol">
+                    <h3>ΕΡΓΑ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ</h3>
+                </div>
+                <!-- List of trips -->
+                <ul>
+                    <li><img src="./images/photo.jpg" alt="Photo1"><h2>Γενικού Παναρκαδικό Νοσοκομείο Τρίπολης</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p><a href="#">ΠΕΡΙΣΣΟΤΕΡΑ</a></li>
+                    <li><img src="./images/photo (1).jpg" alt="Photo1"><h2>Ο  παραδοσιακός οικισμός του Λεωνιδίου</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p><a href="#">ΠΕΡΙΣΣΟΤΕΡΑ</a></li>
+                    <li><img src="./images/photo (2).jpg" alt="Photo1"><h2>Κυνουρία, Εκεί που δεσπόζει ο Πάρνωνας</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p><a href="#">ΠΕΡΙΣΣΟΤΕΡΑ</a></li>
+                    <li><img src="./images/photo (3).jpg" alt="Photo1"><h2>Οι ελληνικές πόλεις με τα καλύτερα πάρκα!</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p><a href="#">ΠΕΡΙΣΣΟΤΕΡΑ</a></li>
+                </ul>
+                <!-- More button -->
+                <a href="#" class="morebutton">
+                    <h4>ΠΕΡΙΣΣΟΤΕΡΑ</h4><span><img src="./svgs/buttonarrow.svg" alt=""></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact part -->
+    <div id = "contact">
+        <div class = "container">
+            <div id = "form">
+                <h3>ΕΠΙΚΟΙΝΩΝΙΑ</h3>
+                <!-- Contact form -->
+                <form action="">
+                    <label for="name">Ονοματεπώνυμο</label>
+                    <input type="text" id="name" name="name">
+        
+                    <label for="phone">Τηλέφωνο</label>
+                    <input type="tel" id="phone" name="telephone">
+        
+                    <label for="e-mail">Email</label>
+                    <input type="email" id="email" name="e-mail">
+        
+                    <label for="message">Μήνυμα</label>
+                    <textarea id="msg" name="message"></textarea>
+                    
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">
+                        <h4>ΑΠΟΣΤΟΛΗ</h4><span><img src="./svgs/buttonarrow.svg" alt="submit"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Last two divs -->
+    <div id=join>
+        <!-- Up button between contact and footer -->
+        <a href="#" id="up"></a>
+    
+        <footer>
+            <div class="container">
+                <div id = "imgs">
+                    <img src="./svgs/logo.svg" alt="Logo" id="flogo">
+                    <img src="./svgs/paf.svg" alt="Paf" id="fpaf">
+                </div>
+    
+                <ul id="media">
+                    <li><a href="#"><img src="./svgs/facebook.svg" alt="facebook"></a></li>
+                    <li><a href="#"><img src="./svgs/twitter.svg" alt="twitter"></a></li>
+                    <li><a href="#"><img src="./svgs/linkedin.svg" alt="linkedin"></a></li>
+                    <li><a href="#"><img src="./svgs/instagram.svg" alt="instagram"></a></li>
+                    <li><a href="#"><img src="./svgs/youtube.svg" alt="youtube"></a></li>
+                </ul>
+    
+                <ul id="menu">
+                    <li><a href="#">Η ΟΜΟΣΠΟΝΔΙΑ</a></li>
+                    <li><a href="#">ΑΡΚΑΔΩΝ ΕΡΓΑ</a></li> 
+                    <li><a href="#">ΕΠΩΝΥΜΟΙ ΑΡΚΑΔΕΣ</a></li> 
+                    <li><a href="#">ΝΕΑ - ΕΝΗΜΕΡΩΣΗ</a></li>
+                    <li><a href="#">ΕΠΙΣΚΕΨΗ ΣΤΗΝ ΑΡΚΑΔΙΑ</a></li>
+                    <li><a href="#">ΑΝΑΖΗΤΗΣΕΙΣ ΣΤΗΝ ΑΡΚΑΔΙΑ</a></li>
+                    <li><a href="#">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+                </ul>
+    
+                <h3>©2018 Pan Arcadian Federation of America</h3>
+            </div> 
+        </footer>
+    </div>
+        
+</body>
+</html>

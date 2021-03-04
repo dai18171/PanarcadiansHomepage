@@ -1,0 +1,715 @@
+@font-face {
+    font-family: ProximaNova;
+    src: url(./fonts/ProximaNovaBold.otf);
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: ProximaNova;
+    src: url(./fonts/ProximaNovaRegular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: SourceSansPro;
+    src: url(./fonts/SourceSansPro-Bold.ttf);
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: SourceSansPro;
+    src: url(./fonts/SourceSansPro-Regular.ttf);
+    font-weight: normal;
+}
+
+
+body{
+    margin: 0;
+    font-family: 'SourceSansPro', serif;
+}
+
+/* Background on header */
+header{
+    background: url("/images/background.png") bottom center no-repeat;
+    background-size: cover;
+    height: 750px;
+}
+
+/* Bar for weather, time etc. */
+#topbar{
+    height: 70px;
+    width: 1360px;
+    display: inline-flex;
+}
+
+/* Main-menu bar */
+nav#main{
+    height: 60px;
+    background: white;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Container for every part */
+.container{
+    width: 1360px;
+    margin:0 auto;
+}
+
+
+#logo img{
+    display: block;
+}
+
+/* Main logo */
+#logo{
+    position: absolute;
+    display: block;
+    border: 10px solid #AB0427;
+    border-radius: 100%;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Main-menu design */
+#main-menu{
+    margin: 0;
+    padding: 0 40px 0 300px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+#main-menu a{
+    font-size: 14px;
+    color: #002868;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#main-menu a:hover{
+    color: #BF0A30;
+}
+
+#main-menu a:hover + .dropdown{
+    display: block;
+}
+
+/* Dropdown list that appears on first element of main-menu */
+.dropdown{
+    display: none;
+    position: absolute;
+    margin-top: 30px; /* Remove margin so that dropwdown touches main menu and you can hover over it (due to no javascript) */
+    background-color: white;
+    width: 275px;
+    height: 365px;
+    border-radius: 4px;
+    list-style-type: none;
+    padding: 16px 0 23px 20px;
+}
+
+.dropdown li{
+    margin: 10px 0 0 0;
+}
+
+.dropdown a{
+    font-family: 'SourceSansPro',serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.dropdown:hover{
+    display: block;
+}
+
+.dropdown a:hover{
+    color: #BF0A30;
+    cursor: pointer;
+}
+
+/* Middle circle configuration */
+#featured{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("./images/circle.png"), 0 0 no-repeat;
+    height: 410px;
+    width: 410px;
+    background-size: 100% 100%;
+    border: 6px solid white;
+    border-radius: 100%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: white;
+    padding: 40px;
+    overflow: hidden;
+}
+
+#featured::after{
+    content: url(./images/map.png);
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    z-index: 0;
+}
+
+#featured > *{
+    z-index: 10;
+    position: relative;
+}
+
+#featured h3{
+    margin: 10px 0 30px;
+    font-size: 12px;
+}
+
+#featured h2{
+    margin: 0 0 30px;
+}
+
+/* Button for more class */
+.morebutton{
+    padding: 0;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid white;
+    width: 200px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.morebutton h4{
+    font-family: 'SourceSansPro', serif;
+    font-size: 14px;
+    width: 100%;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.morebutton span{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(66px);
+    width: 24px;
+    height: 24px;
+}
+
+.morebutton:hover{
+    background-color: #BF0A30;
+}
+
+/* Time element on topbar */
+#time{
+    position: relative;
+    height: 45px;
+    width: 85px;
+    margin: 0 0 auto 235px;
+    transform: translateY(14px);
+    color: white;
+}
+
+#time h2{
+    font-size: 26px;
+    font-family: 'ProximaNova', serif;
+    display: inline-flex;
+    font-weight: normal;
+    margin: 0;
+    text-decoration: none;
+}
+
+#time span#clock{
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+#time h3{
+    font-size: 12px;
+    font-family: 'SourceSansPro', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 0 auto;
+    text-align: right;
+    text-decoration: none;
+}
+
+/* Weather element on topbar */
+#weather{
+    position: relative;
+    height: 45px;
+    width: 100px;
+    margin: 0 12px auto 20px;
+    transform: translateY(14px);
+    color: white;
+}
+
+#weather h2{
+    font-size: 26px;
+    font-family: 'ProximaNova', serif;
+    display: inline-flex;
+    font-weight: normal;
+    margin: 0;
+    text-decoration: none;
+}
+
+#weather span#clock{
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+#weather h3{
+    font-size: 12px;
+    font-family: 'SourceSansPro', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 0 auto;
+    text-align: right;
+    text-decoration: none;
+}
+
+span#fahrenheit{
+    opacity: 40%;
+}
+
+/* Register/Log-in element on topbar */
+#register{
+    position: relative;
+    height: 25px;
+    width: 150px;
+    margin: 23px 0 0 640px;
+}
+
+#register a{
+    color: white;
+    text-decoration: none;
+    font-family: 'SourceSansPro', serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    text-decoration: none;
+}
+
+#register span#user{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Language element on topbar */
+#language{
+    position: relative;
+    margin: 25px 0 0 40px;
+}
+
+#language span#flag{
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+/* Element below main menu */
+#paf{
+    margin: 20px 0 0 236px;
+}
+
+/* Content inventory background and font */
+#inventory{
+    background: url("/images/bg.png") no-repeat;
+    background-size: cover;
+    height: 745px;
+    font-family: 'SourceSansPro', serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Header tree */
+#tree{
+    display: inline-block;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#tree h2{
+    color: #BF0A30;
+    font-size: 48px;
+    font-family: 'SourceSansPro', serif;
+}
+
+#inventory h3{
+    color: #002868;
+    font-size: 18px;
+}
+
+/* Lists element on inventory */
+#lists{
+    display: inline-block;
+}
+
+
+#inventory .list{
+    float: left;
+}
+
+.list ul{
+    text-align: left;
+    padding: 0;
+}
+
+
+#list1 ul{
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+#boltline{
+    font-weight: bold;
+}
+
+#list1{
+    width: 464px;
+}
+
+#list2{
+    width: 475px;
+    margin-left: 60px;
+}
+
+#list2 ul{
+    list-style: none;
+    margin-top: 40px;
+}
+
+#list2 li::before{
+    content: url(./svgs/arrow.svg);
+}
+
+.list h3{
+    text-align: left;
+}
+
+/* Invitation to ceremony */
+#ceremony{
+    font-family: 'SourceSansPro', serif;
+    font-weight: bold;
+    margin: 0 0 60px 0;
+}
+
+#ceremony h2{
+    color: #BF0A30;
+    font-size: 18px;
+    margin: 0;
+}
+
+#ceremony h1{
+    color: #002868;
+    font-size: 34px;
+    margin: 0;
+}
+
+#ceremony h3{
+    color: #002868;
+    font-size: 18px;
+    margin: 0;
+}
+
+
+/* Activities part background and configuration */
+#activities{
+    background: #002868;
+    height: 650px;
+}
+
+#act{
+    text-align: center;
+}
+
+
+/* Header element on activities */
+#head{
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    margin: 40px auto 30px auto;
+}
+
+#head h3{
+    color: white;
+    font-family: 'SourceSansPro', serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* List with activities (img and text) element */
+#act ul{
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: 'SourceSansPro', serif;
+}
+
+#act li{
+    text-align: left;
+    float: left;
+    width: 310px;
+    height: 410px;
+    margin-right: 20px;
+}
+
+#act li h2{
+    margin: 20px 0 0 0;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#act li p{
+    height: 70px;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 12px 0 5px 0;
+}
+
+#act li a{
+    display: block;
+    width: 114px;
+    height: 20px;
+    padding: 13px 18px;
+    color: white;
+    font-family: 'SourceSansPro', serif;
+    border: 1px solid #BF0A30;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#act li a::before{
+    content: url(./svgs/more.svg);
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#act li a:hover{
+    background-color: #BF0A30;
+}
+
+/* Contact form configuration */
+/* Text, Telephone, E-mail */
+input[type=text], input[type=tel], input[type=email]{
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    padding: 10px;
+}
+
+/* Textarea */
+textarea{
+    padding: 10px;
+    width: 100%;
+    height: 120px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background: url(./svgs/danger.svg) 594px 15px no-repeat;
+}
+
+/* Submit Button */
+button{
+    background-color: #002868;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 50px;
+    padding: 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 380px;
+    margin-top: 40px;
+}
+
+button h4{
+    font-family: 'SourceSansPro', serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+}
+
+button span{
+    height: 24px;
+    width: 24px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(86px);
+    justify-content: center;
+}
+
+button:hover{
+    border: 1px solid #BF0A30;
+    background-color: #BF0A30;
+}
+
+/* Icons on telephone and email */
+input#phone{
+    background: url(./svgs/phone.svg) no-repeat;
+    background-position: 10px center;
+    padding: 31px;
+}
+
+input#email{
+    background: url(./svgs/mail.svg) no-repeat;
+    background-position: 10px center;
+    padding: 31px;
+}
+
+/* Form details */
+#form{
+    display: block;
+    width: 740px;
+    margin: auto;
+}
+
+#form h3{
+    font-family: 'SourceSansPro', serif;
+    color: #002868;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin: 60px 0 20px 0;
+    text-decoration: none;
+}
+
+form{
+    display: block;
+    width: 620px;
+    margin: 0 60px 75px 60px;
+}
+
+label{
+    font-family: 'SourceSansPro', serif;
+    font-size: 12px;
+}
+
+/* Two divs */
+#join{
+    position: relative;
+}
+
+/* Footer configuration */
+footer{
+    background: #002868;
+    height: 420px;
+}
+
+/* Logo and paf imgs */
+footer img#flogo{
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    border: #979797;
+    border-radius: 100%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.30);
+}
+
+footer img#fpaf{
+    display: block;
+    margin: 20px auto;
+}
+
+#imgs{
+    position: relative;
+    transform: translateY(30px);
+}
+
+/* Social media list */
+footer ul#media{
+    width: 320px;
+    height: 40px;
+    padding-left: 520px;
+    margin-top: 70px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer menu */
+footer ul#menu{
+    list-style-type: none;
+    display: flex;
+    width: 1100px;
+    height: 30px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding: 0 130px;
+    justify-content: space-between;
+}
+
+footer ul#menu a{
+    font-family: 'SourceSansPro', serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+footer ul#menu a:hover{
+    color: #BF0A30
+}
+
+footer h3{
+    display: block;
+    text-align: center;
+    margin: 8px 0 0 0;
+    color: white;
+    text-decoration: none;
+    font-family: 'SourceSansPro', serif;
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 50%;
+}
+
+/* Circle button for going up */
+a#up{
+    display: block;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    background-image: url(./svgs/up.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #BF0A30;
+    border-radius: 100%;
+    align-items: center;
+    justify-items: center;
+    top: 0;
+    margin-left: 1360px;
+    transform: translateY(-50%);
+}
