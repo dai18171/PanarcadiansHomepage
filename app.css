@@ -32,7 +32,7 @@ body{
 
 /* Background on header */
 header{
-    background: url("/images/background.png") bottom center no-repeat;
+    background: url("./images/background.png") bottom center no-repeat;
     background-size: cover;
     height: 750px;
 }
@@ -111,6 +111,7 @@ nav#main{
     border-radius: 4px;
     list-style-type: none;
     padding: 16px 0 23px 20px;
+    z-index: 11;
 }
 
 .dropdown li{
