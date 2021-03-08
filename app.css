@@ -26,105 +26,220 @@
 
 
 body{
-    margin: 0;
+    margin: 0 auto;
     font-family: 'SourceSansPro', serif;
 }
 
 /* Background on header */
 header{
-    background: url("/images/background.png") bottom center no-repeat;
+    position: relative;
+    background: url("./images/background.png") no-repeat;
+    background-position: center center;
     background-size: cover;
-    height: 750px;
+    height: 480px;
+}
+
+.container{
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 /* Bar for weather, time etc. */
 #topbar{
-    height: 70px;
-    width: 1360px;
+    position: absolute;
+    height: 34px;
     display: inline-flex;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 46px;
 }
 
 /* Main-menu bar */
 nav#main{
-    height: 60px;
-    background: white;
     border-radius: 4px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-/* Container for every part */
-.container{
-    width: 1360px;
-    margin:0 auto;
+
+/* Respnonsive menu */
+
+.checkbutton{
+    position: absolute;
+    display: block;
+    margin: 10px 10px 0 0;
+    height: 24px;
+    right: 0;
+    cursor: pointer;
 }
 
+.menu{
+    width: 300px;
+    height: 600px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 12;
+}
+
+#exit{
+    margin-right: 206px;
+}
+
+#register-menu{
+    text-align: center;
+    height: 35px;
+    border-bottom: 1px solid #EEEEEE;
+    padding-top: 11px;
+}
+
+#register-menu span{
+    vertical-align: middle;
+}
+
+#register-menu a{
+    text-decoration: none;
+    color: #002868;
+    font-size: 14px;
+}
 
 #logo img{
     display: block;
+    width: 100px;
+    height: 100px;
 }
 
 /* Main logo */
 #logo{
-    position: absolute;
     display: block;
-    border: 10px solid #AB0427;
-    border-radius: 100%;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 10px;
+}
+
+#flag-menu{
+    margin-right: 4px;
+}
+
+#top-row{
+    padding: 10px;
+    background-color: #F8F8F8;
+}
+
+.wrapper{
+    position: relative;
+}
+
+#main-page{
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    z-index: 10;
+}
+
+#second-page{
+    position: absolute;
+    display: none;
+    width: 300px;
+    height: 600px;
+    z-index: 11;
+}
+
+#return{
+    height: 24px;
+    background-color: white;
+    padding: 10px 0 0 20px;
+}
+
+#return a{
+    text-decoration: none;
+    font-family: 'SourceSansPro', serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #002868;
+    display: table;
+    height: 24px;
+}
+
+#return span{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#return span img{
+    display: block;
 }
 
 /* Main-menu design */
 #main-menu{
-    margin: 0;
-    padding: 0 40px 0 300px;
-    display: flex;
+    margin: 0 0 0 20px;
+    padding: 0;
+    height: 260px;
     align-items: center;
-    height: 60px;
     list-style-type: none;
     justify-content: space-between;
 }
 
-#main-menu a{
+#main-menu  a{
+    font-family: 'SourceSansPro', serif;
     font-size: 14px;
     color: #002868;
     font-weight: bold;
     text-decoration: none;
-}
+} 
 
 #main-menu a:hover{
     color: #BF0A30;
 }
 
-#main-menu a:hover + .dropdown{
-    display: block;
+#main-menu li:last-child{
+    display: none;
+}
+
+#main-menu li{
+    margin-top: 20px;
+}
+
+#main-menu span{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    float: right;
+    margin-right: 10px;
+}
+
+#main-menu span img{
+    width: 20px;
+    height: 20px;
 }
 
 /* Dropdown list that appears on first element of main-menu */
+
 .dropdown{
-    display: none;
+    width: 260px;
+    height: 540px;
+    padding: 26px 10px 0 30px;
     position: absolute;
-    margin-top: 30px; /* Remove margin so that dropwdown touches main menu and you can hover over it (due to no javascript) */
+    z-index: 11;
     background-color: white;
-    width: 275px;
-    height: 365px;
-    border-radius: 4px;
     list-style-type: none;
-    padding: 16px 0 23px 20px;
+    margin-top: 0;
 }
 
 .dropdown li{
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
+}
+
+.dropdown li:first-child{
+    margin-top: 0;
 }
 
 .dropdown a{
     font-family: 'SourceSansPro',serif;
     font-size: 14px;
     font-weight: bold;
-}
-
-.dropdown:hover{
-    display: block;
+    color: #002868;
+    text-decoration: none;
 }
 
 .dropdown a:hover{
@@ -136,18 +251,17 @@ nav#main{
 #featured{
     position: relative;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 27px auto 90px auto;
     background: url("./images/circle.png"), 0 0 no-repeat;
-    height: 410px;
-    width: 410px;
-    background-size: 100% 100%;
+    height: 220px;
+    width: 220px;
+    background-size: cover;
     border: 6px solid white;
     border-radius: 100%;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
     text-align: center;
     color: white;
-    padding: 40px;
+    padding: 18px 30px 42px 30px;
     overflow: hidden;
 }
 
@@ -166,28 +280,48 @@ nav#main{
 }
 
 #featured h3{
-    margin: 10px 0 30px;
+    margin: 4px 0 15px;
     font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 #featured h2{
-    margin: 0 0 30px;
+    font-size: 18px;
+    margin: 0 0 16px;
+}
+
+#featured p{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+#featured p#fullsize{
+    display: none;
+}
+
+#welcome img{
+    height: 18px;
+    width: 18px;
 }
 
 /* Button for more class */
 .morebutton{
     padding: 0;
-    position: relative;
     border-radius: 4px;
     border: 1px solid white;
-    width: 200px;
-    height: 50px;
+    width: 140px;
+    height: 40px;
+    margin-top: 20px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px;
     cursor: pointer;
     text-decoration: none;
+}
+
+#actmorebutton{
+    width: 280px;
+    height: 50px;
 }
 
 .morebutton h4{
@@ -200,7 +334,7 @@ nav#main{
 }
 
 .morebutton span{
-    display: block;
+    display: none;
     position: absolute;
     left: 50%;
     transform: translateX(66px);
@@ -215,33 +349,37 @@ nav#main{
 /* Time element on topbar */
 #time{
     position: relative;
-    height: 45px;
-    width: 85px;
-    margin: 0 0 auto 235px;
-    transform: translateY(14px);
+    width: 66px;
+    margin: 0;
     color: white;
 }
 
 #time h2{
-    font-size: 26px;
+    font-size: 18px;
     font-family: 'ProximaNova', serif;
     display: inline-flex;
     font-weight: normal;
     margin: 0;
     text-decoration: none;
+    height: 25px;
+    text-align: center;
 }
 
 #time span#clock{
-    vertical-align: bottom;
     margin-right: 5px;
 }
 
+#time span#clock img{
+    width: 16px;
+    height: 16px;
+}
+
 #time h3{
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'SourceSansPro', serif;
     font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0 0 auto;
+    letter-spacing: 1px;
+    margin: 0 0 0 22px;
     text-align: right;
     text-decoration: none;
 }
@@ -250,14 +388,13 @@ nav#main{
 #weather{
     position: relative;
     height: 45px;
-    width: 100px;
-    margin: 0 12px auto 20px;
-    transform: translateY(14px);
+    width: 75px;
+    margin: 0 0 0 140px;
     color: white;
 }
 
 #weather h2{
-    font-size: 26px;
+    font-size: 18px;
     font-family: 'ProximaNova', serif;
     display: inline-flex;
     font-weight: normal;
@@ -265,13 +402,18 @@ nav#main{
     text-decoration: none;
 }
 
-#weather span#clock{
+#weather span#storm{
     vertical-align: bottom;
     margin-right: 5px;
 }
 
+#weather span#storm img{
+    width: 16px;
+    height: 16px;
+}
+
 #weather h3{
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'SourceSansPro', serif;
     font-weight: bold;
     letter-spacing: 2px;
@@ -286,11 +428,12 @@ span#fahrenheit{
 
 /* Register/Log-in element on topbar */
 #register{
-    position: relative;
+    display: none;
     height: 25px;
     width: 150px;
     margin: 23px 0 0 640px;
 }
+
 
 #register a{
     color: white;
@@ -309,8 +452,9 @@ span#fahrenheit{
 
 /* Language element on topbar */
 #language{
+    display: none;
     position: relative;
-    margin: 25px 0 0 40px;
+    margin: 25px 0 0 20px;
 }
 
 #language span#flag{
@@ -321,30 +465,45 @@ span#fahrenheit{
 
 /* Element below main menu */
 #paf{
-    margin: 20px 0 0 236px;
+    display: block;
+    margin: 10px auto 0 auto;
+    text-align: center;
 }
 
 /* Content inventory background and font */
 #inventory{
     background: url("/images/bg.png") no-repeat;
     background-size: cover;
-    height: 745px;
+    height: 750px;
     font-family: 'SourceSansPro', serif;
     font-size: 16px;
     text-align: center;
+    position: relative;
 }
 
 /* Header tree */
 #tree{
-    display: inline-block;
+    display: block;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
+}
+
+#tree img{
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+#tree img:first-child{
+    margin-top: 0;
 }
 
 #tree h2{
     color: #BF0A30;
-    font-size: 48px;
+    font-size: 34px;
     font-family: 'SourceSansPro', serif;
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 275px;
 }
 
 #inventory h3{
@@ -355,18 +514,44 @@ span#fahrenheit{
 /* Lists element on inventory */
 #lists{
     display: inline-block;
+    margin-top: 14px;
 }
-
 
 #inventory .list{
     float: left;
 }
 
-.list ul{
-    text-align: left;
-    padding: 0;
+.list li{
+    display: flex;
 }
 
+.list ul{
+    text-align: center;
+    padding: 0;
+    line-height: 25px;
+}
+
+.list h3{
+    margin-top: 0;
+    text-align: center;
+}
+
+#list1{
+    display: block;
+    position: relative;
+    width: 275px;
+    height: 284px;
+    overflow: hidden;
+}
+
+#list1 ul li{
+    margin-top: 10px;
+}
+
+#list1 p{
+    height: 80px;
+    margin: 0;
+}
 
 #list1 ul{
     list-style-type: none;
@@ -377,13 +562,10 @@ span#fahrenheit{
     font-weight: bold;
 }
 
-#list1{
-    width: 464px;
-}
 
 #list2{
+    display: none;
     width: 475px;
-    margin-left: 60px;
 }
 
 #list2 ul{
@@ -395,35 +577,36 @@ span#fahrenheit{
     content: url(./svgs/arrow.svg);
 }
 
-.list h3{
-    text-align: left;
-}
-
 /* Invitation to ceremony */
 #ceremony{
     font-family: 'SourceSansPro', serif;
     font-weight: bold;
-    margin: 0 0 60px 0;
+    margin: 30px auto 0 auto;
+    display: block;
+    width: 184px;
+    height: 121px;
 }
 
 #ceremony h2{
     color: #BF0A30;
     font-size: 18px;
     margin: 0;
+    height: 20px;
 }
 
 #ceremony h1{
     color: #002868;
-    font-size: 34px;
-    margin: 0;
+    font-size: 24px;
+    margin: 9px 0 0 0;
+    height: 60px;
 }
 
 #ceremony h3{
     color: #002868;
     font-size: 18px;
-    margin: 0;
+    margin: 12px 0 0 0;
+    height: 20px;
 }
-
 
 /* Activities part background and configuration */
 #activities{
@@ -434,7 +617,6 @@ span#fahrenheit{
 #act{
     text-align: center;
 }
-
 
 /* Header element on activities */
 #head{
@@ -453,26 +635,41 @@ span#fahrenheit{
 
 /* List with activities (img and text) element */
 #act ul{
-    display: inline-block;
     list-style-type: none;
-    padding: 0;
+    padding: 0 0 0 20px;
     margin: 0;
     color: white;
     font-family: 'SourceSansPro', serif;
+    display: flex;
 }
 
 #act li{
     text-align: left;
-    float: left;
-    width: 310px;
-    height: 410px;
     margin-right: 20px;
+    display: flex;
+}
+
+#act ul div{
+    flex-grow: 1;
+    display: inline-block;
+    width: 260px;
+    height: 403px;
+}
+
+#act ul img{
+    width: 260px;
+    height: 200px;
+    display: block;
+}
+
+#act li:last-child{
+    margin-right: 0;
 }
 
 #act li h2{
     margin: 20px 0 0 0;
-    height: 60px;
-    font-size: 24px;
+    height: 40px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -487,11 +684,10 @@ span#fahrenheit{
     display: block;
     width: 114px;
     height: 20px;
-    padding: 13px 18px;
+    padding: 12px 18px;
+    margin-top: 15px;
     color: white;
     font-family: 'SourceSansPro', serif;
-    border: 1px solid #BF0A30;
-    border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
@@ -503,9 +699,7 @@ span#fahrenheit{
     margin-right: 5px;
 }
 
-#act li a:hover{
-    background-color: #BF0A30;
-}
+
 
 /* Contact form configuration */
 /* Text, Telephone, E-mail */
@@ -522,7 +716,7 @@ input[type=text], input[type=tel], input[type=email]{
 
 /* Textarea */
 textarea{
-    padding: 10px;
+    padding: 15px 10px;
     width: 100%;
     height: 120px;
     border: 1px solid #ccc;
@@ -530,7 +724,6 @@ textarea{
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
-    background: url(./svgs/danger.svg) 594px 15px no-repeat;
 }
 
 /* Submit Button */
@@ -540,14 +733,14 @@ button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 240px;
+    width: 130px;
     height: 50px;
     padding: 0px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 380px;
-    margin-top: 40px;
+    left: 0;
+    margin: 40px 0 0 150px;
 }
 
 button h4{
@@ -562,10 +755,10 @@ button h4{
 button span{
     height: 24px;
     width: 24px;
-    display: block;
     position: absolute;
-    left: 50%;
-    transform: translateX(86px);
+    right: 0;
+    margin-right: 10px;
+    display: block;
     justify-content: center;
 }
 
@@ -590,8 +783,8 @@ input#email{
 /* Form details */
 #form{
     display: block;
-    width: 740px;
-    margin: auto;
+    width: 280px;
+    margin: 0 auto 75px auto;
 }
 
 #form h3{
@@ -606,8 +799,6 @@ input#email{
 
 form{
     display: block;
-    width: 620px;
-    margin: 0 60px 75px 60px;
 }
 
 label{
@@ -615,22 +806,18 @@ label{
     font-size: 12px;
 }
 
-/* Two divs */
-#join{
-    position: relative;
-}
-
 /* Footer configuration */
 footer{
     background: #002868;
-    height: 420px;
+    height: 630px;
+    position: relative;
 }
 
 /* Logo and paf imgs */
 footer img#flogo{
     display: block;
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto;
     border: #979797;
     border-radius: 100%;
@@ -639,20 +826,20 @@ footer img#flogo{
 
 footer img#fpaf{
     display: block;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
 }
 
 #imgs{
-    position: relative;
-    transform: translateY(30px);
+    display: block;
+    margin-top: 30px;
 }
 
 /* Social media list */
 footer ul#media{
-    width: 320px;
+    width: 280px;
     height: 40px;
-    padding-left: 520px;
-    margin-top: 70px;
+    margin: 30px auto 0 auto;
+    padding: 0;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -662,13 +849,15 @@ footer ul#media{
 /* Footer menu */
 footer ul#menu{
     list-style-type: none;
-    display: flex;
-    width: 1100px;
-    height: 30px;
-    margin-top: 30px;
-    margin-bottom: 0;
-    padding: 0 130px;
+    display: block;
+    padding: 0;
+    margin: 30px auto 0 auto;
     justify-content: space-between;
+    text-align: center;
+}
+
+footer ul#menu li{
+    margin-top: 20px;
 }
 
 footer ul#menu a{
@@ -686,7 +875,7 @@ footer ul#menu a:hover{
 footer h3{
     display: block;
     text-align: center;
-    margin: 8px 0 0 0;
+    margin: 30px 0 0 0;
     color: white;
     text-decoration: none;
     font-family: 'SourceSansPro', serif;
@@ -697,7 +886,6 @@ footer h3{
 
 /* Circle button for going up */
 a#up{
-    display: block;
     position: absolute;
     width: 44px;
     height: 44px;
@@ -709,7 +897,485 @@ a#up{
     border-radius: 100%;
     align-items: center;
     justify-items: center;
-    top: 0;
-    margin-left: 1360px;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 20px 0;
     transform: translateY(-50%);
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Media Queries */
+@media (min-width: 640px){
+    /* Container for every part */
+    .container{
+        width: 600px;
+        margin:0 auto;
+    }
+
+    header{
+        height: 600px;
+    }
+
+    #lists{
+        height: 285px;
+    }
+
+    #list1{
+        width: 364px;
+        height: 285px;
+    }
+
+    #ceremony{
+        width: 440px;
+        height: 97px;
+    }
+    
+    #ceremony h1{
+        font-size: 34px;
+        margin: 5px 0 0 0;
+        height: unset;
+    }
+    
+    #ceremony h3{
+        margin: 9px 0 0 0;
+    }
+    
+    #form{
+        width: 600px;
+    }
+
+    button{
+        width: 240px;
+        height: 50px;
+        margin: 40px 0 0 360px;
+    }
+
+    textarea{
+        padding-right: 30px;
+        background: url(./svgs/danger.svg) 570px 15px no-repeat;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 960px){
+    /* Container for every part */
+    .container{
+        width: 920px;
+        margin:0 auto;
+    }
+
+    header{
+        height: 680px;
+    }
+
+    /* Main-menu bar */
+    nav#main{
+        height: 60px;
+        background: white;
+        display: block;
+    }
+    
+    .checkbutton{
+        display: none;
+    }
+
+    .menu{
+        width: unset;
+        height: unset;
+        display: unset;
+        position: unset;
+        background-color: unset;
+    }
+
+    #top-row{
+        padding: 0;
+    }
+
+    #language-menu, #exit, #register-menu{
+        display: none;
+    }
+
+    #exit{
+        display: none;
+    }
+
+    #register-menu{
+        display: none;
+    }
+
+    #main-page{
+        position: unset;
+    }
+
+    #main-menu{
+        position: unset;
+        display: flex;
+        padding: 0 20px 0 270px;
+        height: 60px;
+        margin: 0;
+    }
+
+    #main-menu a{
+        font-size: 12px;
+    }
+
+    #main-menu li:last-child{
+        display: unset;
+    }
+
+    #main-menu span{
+        display: none;
+    }
+
+    #main-menu li{
+        margin-top: 0;
+    }
+
+    #second-page{
+        margin: 10px 0 0 270px;
+    }
+
+    .dropdown{
+        width: 260px;
+        height: 335px;
+        border-radius: 4px;
+        padding: 16px 0 23px 20px;
+        position: absolute;
+    }
+
+    .dropdown li{
+        margin: 0;
+        height: 28px;
+    }
+
+    #return{
+        display: none;
+    }
+
+    #main-page{
+        position: unset;
+        width: unset;
+        height: unset;
+    }
+
+    #logo{
+        position: absolute;
+        border: 10px solid #AB0427;
+        border-radius: 100%;
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #logo img{
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Bar for weather, time etc. */
+    #topbar{
+        position: unset;
+        height: 70px;
+        display: flex;
+        top: 50%;
+        transform: translateY(0);
+    }
+
+    #paf{
+        margin: 20px 0 0 246px;
+        text-align: unset;
+    }
+
+    #featured{
+        width: 340px;
+        height: 340px;
+    }
+
+    #featured p{
+        font-size: 16px;
+    }
+
+    #featured h2{
+        font-size: 24px;
+    }
+
+    #featured h3{
+        margin: 10px 0 30px;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #featured h2{
+        margin: 0 0 30px;
+    }
+
+
+    #welcome img{
+        height: 24px;
+        width: 24px;
+    }
+
+    #language{
+        display: block;
+    }
+
+    #register{
+        display: block;
+        margin-left: 250px;
+    }
+
+    /* Time element on topbar */
+    #time{
+        position: relative;
+        height: 45px;
+        width: 85px;
+        margin: 0 0 auto 245px;
+        transform: translateY(14px);
+    }
+
+    #time h2{
+        font-size: 26px;
+        width: 85px;
+        height: 32px;
+    }
+
+    #time h3{
+        font-size: 12px;
+        margin: 0 auto;
+        letter-spacing: 2px;
+    }
+
+    #time span#clock img{
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Weather element on topbar */
+    #weather{
+        position: relative;
+        height: 45px;
+        width: 100px;
+        margin: 0 0 auto 20px;
+        transform: translateY(14px);
+        color: white;
+    }
+
+    #weather h2{
+        font-size: 26px;
+    }
+
+    #weather h3{
+        font-size: 12px;
+    }
+
+    #weather span#storm img{
+        width: 20px;
+        height: 20px;
+    }
+
+    #lists{
+        margin-top: 40px;
+        height: 245px;
+    }
+
+    #tree{
+        margin-top: 40px;
+    }
+
+    #tree h2{
+        font-size: 48px;
+        width: 615px;
+        margin: 40px auto 0 auto;
+    }
+
+    #tree img{
+        width: unset;
+        height: unset;
+    }
+
+    #list1{
+        width: 464px;
+        height: 245px;
+    }
+
+    #list1 ul li{
+        margin-top: 0;
+    }
+
+    #list2{
+        display: inline-block;
+        margin-left: 30px;
+        width: 400px;
+        height: 245px;
+    }
+
+    .list ul{
+        text-align: left;
+        padding: 0;
+    }
+    
+    .list h3{
+        text-align: left;
+    }
+
+    #actmorebutton{
+        width: 200px;
+        height: 50px;
+    }
+
+    #act ul div{
+        width: 300px;
+        height: 413px;
+    }
+
+    #act ul img{
+        width: 300px;
+        height: 200px;
+        display: block;
+    }
+
+    #act li h2{
+        font-size: 24px;
+        height: 60px;
+    }
+
+    #act li a{
+        border: 1px solid #BF0A30;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+
+    #act li a:hover{
+        background-color: #BF0A30;
+    }
+
+    a#up{
+        top: 0;
+        margin: 0 100px 0 0;
+    }
+
+    #form{
+        width: 620px;
+    }
+
+    textarea{
+        background: url(./svgs/danger.svg) 590px 15px no-repeat;
+    }
+
+    button{
+        margin: 40px 0 0 380px;
+    }
+
+    footer{
+        height: 420px;
+    }
+
+    footer img#flogo{
+        width: 180px;
+        height: 180px;
+    }
+
+    footer ul#media{
+        width: 320px;
+    }
+
+    footer ul#menu{
+        display: flex;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    footer ul#menu li{
+        margin: 0 20px 0 0;
+    }
+
+    footer ul#menu li:last-child{
+        margin-right: 0;
+    }
+
+    footer h3{
+        margin-top: 8px;
+    }
+
+    #tree img{
+        margin-top: 20px;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 1280px){
+    /* Container for every part */
+    .container{
+        width: 1360px;
+        margin:0 auto;
+    }
+
+    #main-menu a{
+        font-size: 14px;
+    }
+
+    #main-menu{
+        padding: 0 30px 0 280px;
+    }
+
+    nav#main{
+        height: 60px;
+    }
+
+    #featured{
+        width: 362px;
+        height: 362px;
+        padding: 38px;
+    }
+
+    .morebutton{
+        width: 200px;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    .morebutton span{
+        display: block;
+    }
+
+    #featured p#fullsize{
+        display: block;
+    }
+
+    #featured p#mobsize{
+        display: none;
+    }
+
+    header{
+        height: 750px;
+    }
+
+    #register{
+        display: block;
+        margin-left: 640px;
+    }
+
+    #language{
+        display: block;
+        margin-left: 40px;
+    }
+
+    #list2{
+        width: 475px;
+        margin-left: 60px;
+    }
+
+    #act ul{
+        padding-left: 50px;
+    }
+
+    footer ul#menu{
+        margin: 30px 120px 0 120px;
+    }
 }
