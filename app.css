@@ -82,6 +82,7 @@ nav#main{
     position: absolute;
     background-color: white;
     z-index: 12;
+    box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 #exit{
@@ -265,14 +266,6 @@ nav#main{
     overflow: hidden;
 }
 
-#featured::after{
-    content: url(./images/map.png);
-    display: block;
-    position: absolute;
-    top: -50%;
-    left: -100%;
-    z-index: 0;
-}
 
 #featured > *{
     z-index: 10;
@@ -303,6 +296,14 @@ nav#main{
 #welcome img{
     height: 18px;
     width: 18px;
+}
+
+#map{
+    position: absolute;
+    top: -50%;
+    transform: translateX(-50%);
+    mix-blend-mode: luminosity;
+    opacity: 50%;
 }
 
 /* Button for more class */
@@ -597,7 +598,7 @@ span#fahrenheit{
 #ceremony h1{
     color: #002868;
     font-size: 24px;
-    margin: 9px 0 0 0;
+    margin: 9px auto 0 auto;
     height: 60px;
 }
 
@@ -682,9 +683,9 @@ span#fahrenheit{
 
 #act li a{
     display: block;
-    width: 114px;
+    width: 145px;
     height: 20px;
-    padding: 12px 18px;
+    padding: 12px 0 12px 5px;
     margin-top: 15px;
     color: white;
     font-family: 'SourceSansPro', serif;
@@ -1072,6 +1073,8 @@ a#up{
     }
 
     #logo img{
+        border-radius: 100%;
+        box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.25);
         width: 180px;
         height: 180px;
     }
@@ -1245,7 +1248,6 @@ a#up{
     }
 
     #act li a{
-        border: 1px solid #BF0A30;
         border-radius: 4px;
         margin-top: 5px;
     }
